@@ -43,6 +43,15 @@ AIPs for others to follow.
 [adopting aips in your company]: https://google.aip.dev/adopting
 [contributing to the project]: ./CONTRIBUTING.md
 
+## hCaptcha / reCAPTCHA setup
+
+- **Env var name:** `HCAPTCHA_SECRET` (or `RECAPTCHA_SECRET` if using Google reCAPTCHA).
+- **Local usage:** create a `.env` file with the secret (do not commit it). See `.env.example` included in this repo.
+- **CI / GitHub Actions:** add a repository secret named `HCAPTCHA_SECRET` in your repository settings (Settings → Secrets → Actions) and reference it in workflows as `${{ secrets.HCAPTCHA_SECRET }}`.
+- **Provider dashboard:** register a site and obtain a secret at https://dashboard.hcaptcha.com/sites/new (or https://www.google.com/recaptcha/admin for reCAPTCHA).
+
+Do NOT commit the actual secret into the repository.
+
 ## License
 
 Except as otherwise noted, the content of this repository is licensed under the
